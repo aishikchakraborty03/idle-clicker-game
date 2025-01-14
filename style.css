@@ -1,0 +1,124 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #ff9800;
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --border-radius: 8px;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: grid;
+    place-items: center;
+    padding: var(--spacing-md);
+    overflow-x: hidden;
+}
+
+.container {
+    background: #ffffff;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    width: min(90vw, 400px);
+}
+
+.game-stats {
+    margin: var(--spacing-md) 0;
+}
+
+.upgrades-grid {
+    display: grid;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    border: none;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none;
+}
+
+.primary-button {
+    font-size: 1.25rem;
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--spacing-md) var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.upgrade {
+    background-color: var(--secondary-color);
+    color: white;
+    box-shadow: var(--shadow-sm);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+#bonusCoinsContainer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.bonusCoin {
+    position: absolute;
+    background: linear-gradient(45deg, #ffd700, #ffed4a);
+    border-radius: 50%;
+    padding: var(--spacing-md);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    pointer-events: auto;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --spacing-lg: 1.5rem;
+    }
+    
+    .container {
+        padding: var(--spacing-md);
+    }
+    
+    button {
+        width: 100%;
+    }
+}

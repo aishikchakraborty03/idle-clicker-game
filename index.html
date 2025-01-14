@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An idle clicker game where you earn coins and unlock upgrades">
+    <title>Idle Clicker Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Idle Clicker Game</h1>
+        <section class="game-stats">
+            <p aria-live="polite">Coins: <span id="coinCount">0</span></p>
+            
+            <button id="clickButton" class="primary-button" aria-label="Click to earn coins">Click Me!</button>
+        </section>
+        
+        <section class="upgrades-section">
+            <h2>Upgrades</h2>
+            <div id="upgrades" class="upgrades-grid">
+                <button id="autoClicker" class="upgrade" data-cost="10" disabled aria-label="Buy Auto Clicker upgrade">
+                    Auto Clicker Lv. <span id="autoClickerLevel">1</span> (Cost: <span id="autoClickerCost">10</span>)
+                </button>
+                <button id="clickMultiplier" class="upgrade" data-cost="25" disabled aria-label="Buy Double Coins upgrade">
+                    Double Coins per Click Lv. <span id="clickMultiplierLevel">1</span> (Cost: <span id="clickMultiplierCost">25</span>)
+                </button>
+                <button id="coinMagnet" class="upgrade" data-cost="50" disabled aria-label="Buy Coin Magnet upgrade">
+                    Coin Magnet (Cost: 50 coins)
+                </button>
+                <button id="superClicker" class="upgrade" data-cost="100" disabled aria-label="Buy Super Clicker upgrade">
+                    Super Clicker (Cost: 100 coins)
+                </button>
+            </div>
+        </section>
+    </main>
+    <div id="bonusCoinsContainer" aria-live="polite"></div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
